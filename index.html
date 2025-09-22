@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Выручка по городам — ТОП-10</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom, #f5f2eb, #ffffff);
+      color: #333;
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      flex: 0 0 200px; /* ширина панели */
+      background: #f0e8da;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .sidebar img {
+      height: 90%;
+      opacity: 0.7;
+    }
+    .content {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5a4633;
+    }
+    #controls {
+      margin: 20px 0;
+      text-align: center;
+    }
+    select, input[type=file] {
+      padding: 8px 12px;
+      font-size: 14px;
+      margin: 0 8px;
+      border: 1px solid #d1c7b8;
+      border-radius: 6px;
+      background: #fffaf3;
+    }
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #eee4d8;
+      text-align: center;
+    }
+    th {
+      background-color: #d9c8af;
+      color: #3b2d1f;
+    }
+    tr:hover td {
+      background-color: #f8f4ee;
+    }
+    .note {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      color: #7b6a58;
+    }
+  </style>
+</head>
+<body>
+  <!-- Левая панель с небоскрёбом -->
+  <div class="sidebar">
+    <img src="free-icon-cayan-tower-3798695.png" alt="Небоскрёб слева">
+  </div>
+
+  <!-- Основной контент -->
+  <div class="content">
+    <h2>ТОП-10 городов по выручке</h2>
+
+    <div id="controls">
+      <input type="file" id="fileInput" accept=".csv" />
+      <label for="yearSelect">Год: </label>
+      <select id="yearSelect"></select>
+    </div>
+
+    <table id="resultTable">
+      <thead>
+        <tr><th>Город</th><th>Выручка</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p class="note">Выберите CSV файл, потом год — и увидите ТОП-10 городов.
