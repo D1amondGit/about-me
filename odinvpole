@@ -1,0 +1,21 @@
+def konb(pole):
+    if pole[0] in 'cdef' and pole[-1] in '3456':
+        return 8
+    elif (pole[0] in 'cdef' and pole[-1] in '27') or (pole[0] in 'bg' and pole[-1] in '3456'):
+        return 6
+    elif (pole=='a1') or (pole=='a8') or (pole=='h1') or (pole=='h8'):
+        return 2
+    elif (pole[0] in 'bg' and pole[1] in '18') or (pole[0] in 'ah' and pole[1] in '27'):
+        return 3
+    else:
+        return 4
+
+
+
+
+m=[]
+n = int(input())
+for x in range(n):
+    m.append(input())
+for x in m:
+    print(konb(x))
